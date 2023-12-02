@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name= "author" content = "Pepe, Jecca Claire B.">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Claire's Movie Review</title>
+		
+		<style>
+		 * {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Poppins',sans-serif;
+			transition: all 0.35s linear;
+		}
+		body {
+			min-height: 100vh;
+			background-attachment: fixed;
+			background-image: url("./img/bg.webp");
+			background-size: cover;
+		}
+		h3{
+			padding: 1em;
+			color: #ff3131;
+			letter-spacing: 3px;
+		}
+		div a{
+			padding: 1em;
+			color: #f5f5f5;
+			letter-spacing: 3px;
+		}
+		a{
+			cursor: pointer;
+			transition: all .5s ease-in-out;
+			margin: 0.5em;
+			padding: 10px 15px;
+			color: #f5f5f5;
+			border-radius: 20px;
+		}
+		a:hover{
+			background-color: #017592;
+		}
+		.navbar {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			background-color: black;
+			padding: 5px;
+		}
+		.navbar a {
+			color: #fff;
+			text-decoration: none;
+			padding: 5px;
+			font-size: 15px;
+		}
+		.navbar a:hover {
+			background-color: #ff0000;
+		}
+		.head h1{
+			color: transparent;
+			-webkit-text-stroke: 1px #000000;
+			text-align: center;
+			font-size: 80px;
+			margin-top: 40px;
+			font-weight: bolder;
+			background: url("./img/txtbg.jpg");
+			-webkit-background-clip: text;
+			background-position: 0 0;
+			animation: back 20s linear infinite;
+		}
+		@keyframes back{
+			100%{
+				background-position: 2000px 0;
+			}
+		}
+		#intro{
+			width: 1130px;
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+		}
+		.int img{
+			filter: drop-shadow(-10px -10px 10px white);
+			padding: 60px;
+			height: auto;
+			width: 30%;
+			float: left;
+			padding-bottom: 100px;
+		}
+		.movie-text{
+			color: #000;
+			margin-top: 80px;
+		}
+		span{
+			color: #fff;
+		}
+		.movie-text h2{
+			font-size: 25px;
+			color: #fff;
+			margin-top: 50px;
+			margin-bottom: 20px;
+		}
+		.movie-text p{
+			font-size: 16px;
+			font-weight: bolder;
+		}
+		.movie-detail .set {
+			display: inline-block;
+			margin-right: 64px;
+			margin-bottom: 20px;
+		}
+		.movie-detail label {
+			font-size: 18px;
+			color: #000;
+			display: block;
+			font-weight: bolder;
+			text-shadow: 2px 2px 8px #f5f5f5;
+		}
+		.movie-detail span {
+			font-size: 15px;
+			font-weight: bolder;
+		}
+		.movie-text a{
+			text-decoration: none !important;
+			border-radius: 30px;
+			padding: 7px 10px;
+			color: #fff !important;
+			margin-top: 20px;
+		}
+		.trail{
+			display: inline-block;
+			border: 1px solid #fff;
+			position: relative;
+			background: transparent;
+			font-weight: bolder;
+			font-size: 15px;
+		}
+		#cast{
+			display: flex;
+			gap: 70;
+			flex-direction: row;
+			justify-content: center;
+			padding-bottom: 0;
+		}
+		#cast img{
+			align-items: center;
+			margin: auto;
+			padding-top: 20px;
+			margin-right: 20px;
+			width: 170%;
+			height: 290px;
+		}
+		#main{
+			font-size: 20px;
+			color: #fff;
+			margin-top: 25px;
+			margin-bottom: 0px;
+		}
+		#rev{
+			display: flex;
+			flex-direction: column;
+			padding: 100px;
+			margin: 20px;
+			padding-top: 0;
+			align-items: center;
+		}
+		#row{
+			display: flex;
+			flex-wrap: wrap;
+		}
+		#box{
+			background-color: #000;
+			display: flex;
+			flex-direction: column;
+			width: 490px;
+			height: 680px;
+			border: 1px solid #000;
+			margin: 10px;
+			text-align: center;
+			padding: 10px;
+			border-radius: 15px;
+			color: white;
+			box-shadow: -3px 0px 45px 3px #070707;
+		}
+		#headings3{
+			text-align: center;
+			color: #C060A1;
+			font-size: 20px;
+			margin-top: 10px;
+		}
+		h1{
+			text-align: center;
+			margin-bottom: 10px;
+			margin-top: 20px;
+			font-size: 70px;
+			font-family: 'Times New Roman', Times, serif;
+			color: #fff;
+		}
+		#box p{
+			margin-top: 20px;
+			padding: 10px;
+			text-align: justify;
+		}
+		#box img{
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 20px;
+			border-radius: 20px;
+			width: 50%;
+			border: 1px solid #ddd;
+		}
+		#box1{
+			background-color: #000;
+			flex-direction: column;
+			width: 800px;
+			height: 170px;
+			border: 1px solid #000;
+			text-align: justify;
+			margin: auto;
+			margin-top: 20px;
+			padding: 10px;
+			border-radius: 15px;
+			color: white;
+			box-shadow: -3px 0px 45px 3px #070707;
+			align-items: center;
+			margin-bottom: 30px;
+		}
+		#box1 p{
+			margin-top: auto;
+			margin-bottom: 20px;
+			padding: 10px;
+		}
+        video{
+			padding: 10px;
+			display: block;
+  			margin: auto;
+			margin-top: 10px;
+		}
+		.footer {
+			background-color: black;
+			padding: 20px;
+			text-align: center;
+		}
+		p{
+			color: #fff;
+		}
+		</style>
+		<script src="https://kit.fontawesome.com/187d3b140a.js" crossorigin="anonymous"></script>
+		</head>
+		
+		<body>
+			<div class="navbar">
+				<h3>Movie Reviews</h3>
+        		<a href="../index.html">Home</a>
+        		<a href="../Gabasa/The Imitation Game.html">Gabasa</a>
+        		<a href="../Enteria/The-Matrix.html">Enteria</a>
+				<a href="./Jobs(2013).html">Pepe</a>
+				<a href="../Namatay/50 First Dates.html">Namatay</a>
+				<a href="../Catalo/TheInternship.html">Catalo</a>
+				<a href="../Mangalinao/Hackers-1995-1.html">Mangalinao</a>
+				<a href="../Longno/BladeRunner.html">Longno</a>
+			</div>
+			<div class="head">
+				<h1>MOVIE REVIEW'S</h1>
+			</div>
+			<section id="intro">
+				<div class="int">
+				<img src="./img/jobs.jpg">
+				<div class="movie-text">
+				<h2>Jobs(2013)</h2>
+				<div class="movie-detail">
+					<div class="set">
+					  <label>Release Date</label>
+					  <span>2013-08-16</span>
+					</div>
+					<div class="set">
+					  <label>Duration</label>
+					  <span>128 min</span>
+					</div>
+					<div class="set">
+					  <label>Genre</label>
+					  <span>Drama & History</span>
+					</div>
+					<div class="set">
+						<label>Country</label>
+						<span>United States of America</span>
+					</div>
+				  </div>
+				<p> 
+					JOBS covers the life of Steve Jobs (Ashton Kutcher) from college to the launch of the iPod in 2001, 
+					one of Apple's biggest cornerstone moments and arguably a paradigm shift in Occidental society. 
+					Contrary to popular belief, it is not based on Walter Isaacson's biography of Jobs; it is an original 
+					screenplay that corrals a series of more or less meaningful moments in Steve Jobs' life that draw a 
+					portrait of an enlightened, misunderstood, and frustrated man. He is always right, and everybody else 
+					is always wrong because they cannot see the big picture.
+				</p>
+				<a href="https://youtu.be/SKZfFpCKJLM" class="trail"><i class="fa-solid fa-play"></i>Trailer</a>
+				<h2 id="main">Main Casts</h2>
+				</div>
+				<div id="cast">
+					<div id="cast img">
+						<img src="./img/kutcher.jpg">
+					</div>
+					<div class="figure img">
+						<img src="./img/gad.jpg">
+					</div>
+					<div id="figure img">
+						<img src="./img/modine.jpg">
+					</div>
+					<div id="figure img">
+						<img src="./img/dermot.jpg">
+					</div>
+					<div id="figure img">
+						<img src="./img/haas.jpg">
+					</div>
+					<div id="figure img">
+						<img src="./img/brammel.jpg">
+					</div>
+				</div>
+			</div>	
+		</div>
+	</section>
+
+	<section id="rev">
+		<h1 style="text-align: center; text-shadow: 4px 4px 2px #000;"> Welcome to Reviews</h1> 
+		<div id="row">
+			<div id="box">
+			<h2 id="headings3">PLOT SUMMARY</h2>
+			<p style="font-size:15px;">
+				In 2001, an older Steve Jobs (Ashton Kutcher) introduces the iPod at an Apple Town Hall meeting. Jobs visited India frequently with his companion Kotke. 
+				In order to live with his adoptive parents, Jobs relocated to Los Altos, California. While employed by Atari, he forms a partnership with his friend 
+				Steve Wozniak (Josh Gad) after learning that Wozniak has created a personal computer known as the Apple I. Wozniak first showed the Apple I at the 
+				Homebrew Computer Club before being approached by Paul Terrell, who was interested in the Apple I. Wozniak and Jobs receive their first order. Apple 
+				Computer has grown incredibly successful, and this success has also caused Jobs alienate himself from his loved ones. However, they couldn't create 
+				these computers alone; Jobs also added four individuals to the Apple team, and they released the Apple II. To the Macintosh Group, Jobs relocated. 
+				Despite the Macintosh's release, Sculley, who later took over as CEO of Apple Computer, forcibly removed Jobs from the organization in. The movie 
+				follows Steve Jobs' marriage to Laurene Powell Jobs after what happened. Gil Amelio asked Steve Jobs to return to Apple as a consultant, and Jobs was
+				quickly appointed as the new CEO. He became interested in Jony Ive's work and is committed to reshaping Apple. The film ends with Jobs recording the 
+				dialogue for the Think Different commercial in 1997.</p>
+				<img src="./img/stevejobs.jpg">
+			</div>
+			<div id="box">
+			<h2 id="headings3">ANALYSIS OF THEMES AND MESSAGES</h2>
+			<p style="font-size:15px;">
+				The focus of the film is on Steve Jobs, one of Apple's founding members and its soul, as he faces his early hardships and ultimately achieves great 
+				success. It's a wonderful two and a half-hour adventure that walks you through his life scene by scene. The film depicts how Jobs, a college dropout, 
+				came to know what he wanted to do with his life when he experienced a spark of grit and resolve. He recognized an opportunity as soon as it presented 
+				itself, and with the aid of his tech-savvy friend Steve Wozniak, he went on to construct something so iconic that it is now one of the most extraordinary 
+				businesses in the entire world.The way that the movie depicts every feeling, emotion, period of time, and circumstance that Jobs encountered enthralls 
+				you and gives you a sense of enlightenment. It speaks about the fortitude and courage required to make your dreams come true. The movie depicts how one 
+				can stumble and fall back in life, but still rise back up and move forward with even more resolve—even when the people you trust betray you. The first step 
+				to success is having the capacity for lofty dreams. However, seeing your desire come true will send you along a route replete with humps and bumps.</p>
+				<img src="./img/frend.jpg">
+			</div>
+			<div id="box">
+			<h2 id="headings3">TECHNICAL ASPECTS</h2>
+			<p style="font-size:15px;">
+				To be completely honest, everything you see in the film is breathtaking. In terms of lighting, framing, camera movements, depth of field, zoom, focus, and color, 
+				the cinematography is so precise that it allows spectators to envision themselves as part of the scene. Being a lover of this genre of film, I was already anticipating 
+				it and had high expectations, and it didn't let me down. Additionally, the music and sound are crystal clear, making it simple to comprehend and experience the mood of the film.
+			</p>
+				<img src="./img/team.jpg">
+			</div>
+			<div id="box">
+				<h2 id="headings3">ACTING</h2>
+				<p style="font-size:15px;">
+					I've already seen this film, but looking back, I'll be honest and say that I wasn't overly excited to learn that Ashton Kutcher would play Steve Jobs. 
+					Because how could a character from the long-running comedy series That 70's Show ever do justice to one of the most significant figures in technology 
+					history? However, after I watched the movie again, I would say he really nailed it, just like the other characters. His acting was spot-on; every emotion 
+					and word he uses has something that will impact the audience. Also, one of the characters that amazes me more is his best friend, Steve Wozniak. I love the 
+					acting, and my favorite part of his part in the movie, aside from him being a supportive best friend, is when he says good-bye to his best friend Steve Jobs. 
+					It was emotional, and both of them really touched my heart. The same goes for the other main characters; they all nailed it, and I still enjoy the movie after 
+					seeing it for a very long time.
+				</p>
+				<img src="./img/finale.jpg">
+			</div>
+		</div>
+	</section>
+
+	<section id="conclu">
+			<h1 style="padding-bottom: 5px; text-align: center; text-shadow: 4px 4px 2px #000;"> Conclusion</h1>
+			<video width="380" height="320" controls>
+				<source src="./video/Motivational Speech Steve Jobs - Made with Clipchamp.mp4" type="video/mp4">
+			</video> 
+				<div id="box1">
+				<p style="font-size:15px;">
+					The life of Steve Jobs is the subject of this movie, and from my perspective, learning about his life and the character development 
+					that went into it has taught me a lot of valuable things. Not only when it comes to developing into a successful entrepreneur, but 
+					also when it comes to enjoying the life we want. Since we are afraid that others will criticize us because we are different, we are 
+					afraid to go forth and live the lives that our souls desire. But Steve Jobs wants us to go out and live with it. We control our lives, 
+					and we are the only ones who can change and improve them. This film is for everyone. You might not enjoy it from the start because Steve
+					Jobs is an asshole from the very first part of the film, but trust me, you will get a smile on your face after seeing this movie.
+				</p>
+				</div>
+			</div>
+		</div> 
+	</section>
+		
+			<div class="footer">
+				<p>&copy; 2023 One Dimension. All rights reserved.</p>
+			</div>
+	
+</body>	
+</html>
